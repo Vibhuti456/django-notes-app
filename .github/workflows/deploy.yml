@@ -1,4 +1,4 @@
-ame: Deploy App with Terraform
+name: Deploy App with Terraform
 
 on:
   push:

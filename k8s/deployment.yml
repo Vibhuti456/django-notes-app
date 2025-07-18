@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: two-tier-dep
+  namespace: notes
+  labels:
+    app: notes-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: notes-app
+  template:
+    metadata:
+       labels:
+         app: notes-app
+    spec:
+      containers:
+        - name: two-tier-app
+          image: vibhutijain12/notes-app-jenkins
+          ports:
+            - containerPort: 8000
